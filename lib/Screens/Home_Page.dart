@@ -17,6 +17,11 @@ class Home_page extends StatelessWidget{
        ),
        drawer: Drawer(),
    );
+
+   showText(int day)
+    {
+
+    }
   }
 
 }
