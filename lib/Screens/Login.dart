@@ -5,54 +5,53 @@ import 'package:user_input/Constants/AssetsImage.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return Material(
+      color: Colors.white,
+      child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: kToolbarHeight + 12,
+              height: 30,
+            ),
+            Image.asset(
+              "assets/login_image.png",
+              fit: BoxFit.contain,
+
             ),
             Text(
               "Welcome",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             SizedBox(
-              height: 12,
+              height: 20,
             ),
-            Text("Buy any item using the app",
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400)),
-            Image.asset(
-              AssetsImage.loginImage,
-              alignment: Alignment.center,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CupertinoButton(
-                  onPressed: (){},
-                  padding: EdgeInsets.all(8),
-                  child: Image.asset(
-                    "assets/facebook.png",
-                    scale: 11,
-                  ),
-                ),
-
-                CupertinoButton(
-                  onPressed: (){},
-                  padding: EdgeInsets.all(8),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-
-                      "assets/search.png",
-                      scale: 11,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 22),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                        hintText: "Enter your Username",
+                        labelText: "Username"
                     ),
                   ),
-                )
-              ],
-            )
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        hintText: "Enter Password Number",
+                        labelText: "Password"
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(onPressed: (){
+              print("Login Button Pressed");
+            }, child: Text("Login"))
           ],
         ),
       ),
